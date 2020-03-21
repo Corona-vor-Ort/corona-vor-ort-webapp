@@ -1,0 +1,10 @@
+<div class="container">
+  <h4>Meldungen</h4>
+
+  <mat-card *ngFor="let announcement of announcements">
+    <mat-card-title>{{announcement.title}}</mat-card-title>
+    <mat-card-subtitle>{{announcement.date | date}}</mat-card-subtitle>
+    <mat-card-content>{{announcement.message}}</mat-card-content>
+  </mat-card>
+
+</div>
