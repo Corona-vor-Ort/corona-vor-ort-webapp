@@ -11,6 +11,7 @@ export const environment = {
   production: false,
   test: false,
   i18nPrefix: '',
+  apiURI: 'https://api.corona-vor-ort.de',
   versions: {
     app: packageJson.version,
     angular: packageJson.dependencies['@angular/core'],
