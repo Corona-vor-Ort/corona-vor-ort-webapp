@@ -63,5 +63,6 @@
   "anms.title.long": "wirvsvirus Staatliche Kommunikation",
   "anms.title.short": "Angular Vorlage",
   "anms.form.zip": "PLZ",
-  "anms.form.tooltip.zip": "Hier PLZ eingeben"
+  "anms.form.tooltip.zip": "Hier PLZ eingeben",
+  "anms.menu.impressum": "Impressum"
 }
