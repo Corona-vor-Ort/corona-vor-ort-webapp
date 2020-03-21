@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../core/core.module';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'anms-about',
@@ -10,9 +11,17 @@ import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../core/core.module';
 })
 export class AboutComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
-  releaseButler = require('../../../../assets/release-butler.png');
+  zipCode = '';
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
+
+  search() {
+    this.router.navigate(['/city', this.zipCode]);
+  }
+
+  onZipCodeChange(value: string) {
+    this.zipCode = value;
+  }
 }

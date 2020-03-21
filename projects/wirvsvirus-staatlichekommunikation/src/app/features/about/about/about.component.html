@@ -2,11 +2,16 @@
   <div class="gradient">
     <div class="container">
       <h1>{{ 'anms.title.long' | translate }}</h1>
-        <p>Finde aktuelle Infos aus deiner Stadt</p>
-        <anms-big-input rtl [placeholder]="'anms.form.zip' | translate" >
-        <anms-big-input-action fontSet="fas" fontIcon="fa-search" faIcon="search" color="accent"
-          [matTooltip]="'anms.form.tooltip.zip' | translate"
-          matTooltipPosition="before">
+      <p>Finde aktuelle Infos aus deiner Stadt</p>
+      <anms-big-input rtl [placeholder]="'anms.form.zip' | translate"
+                      [value]="zipCode"
+                      (keyup)="onZipCodeChange($event.target.value)"
+                      (keyup.enter)="search()">
+        <anms-big-input-action fontSet="fas" fontIcon="fa-search"
+                               faIcon="search" color="accent"
+                               [matTooltip]="'anms.form.tooltip.zip' | translate"
+                               (action)="search()"
+                               matTooltipPosition="before">
         </anms-big-input-action>
 
       </anms-big-input>
