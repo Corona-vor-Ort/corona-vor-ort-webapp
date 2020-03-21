@@ -19,6 +19,9 @@ import {
   actionSettingsChangeAnimationsPageDisabled,
   actionSettingsChangeLanguage
 } from '../core/settings/settings.actions';
+import {ApiService} from '../api/services/api.service';
+import {TranslateService} from '@ngx-translate/core';
+import {getSortHeaderNotContainedWithinSortError} from '@angular/material/sort/sort-errors';
 
 @Component({
   selector: 'anms-root',
@@ -32,13 +35,17 @@ export class AppComponent implements OnInit {
   version = env.versions.app;
   year = new Date().getFullYear();
   logo = require('../../assets/logo.png');
-  languages = ['en', 'de', 'sk', 'fr', 'es', 'pt-br', 'zh-cn', 'he'];
+
+  // languages = ['en', 'de', 'sk', 'fr', 'es', 'pt-br', 'zh-cn', 'he'];
+  languages = [];
+
   navigation = [
     { link: 'about', label: 'anms.menu.about' },
     { link: 'about/glossar', label: 'anms.menu.glossar' },
     // { link: 'feature-list', label: 'anms.menu.features' },
     { link: 'examples', label: 'anms.menu.examples' }
   ];
+
   navigationSideMenu = [
     ...this.navigation,
     { link: 'settings', label: 'anms.menu.settings' }
@@ -51,7 +58,9 @@ export class AppComponent implements OnInit {
 
   constructor(
     private store: Store,
-    private storageService: LocalStorageService
+    private storageService: LocalStorageService,
+    private apiService: ApiService,
+    private translate: TranslateService
   ) {}
 
   private static isIEorEdgeOrSafari() {
@@ -59,7 +68,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.storageService.testLocalStorage();
+
     if (AppComponent.isIEorEdgeOrSafari()) {
       this.store.dispatch(
         actionSettingsChangeAnimationsPageDisabled({
@@ -68,9 +79,43 @@ export class AppComponent implements OnInit {
       );
     }
 
+    const browserLang = this.translate.getBrowserLang();
+
+    console.log('BrowserLang', browserLang);
+
+    this.apiService
+      .apiLocalesGet()
+      .toPromise()
+      .then((result: any) => {
+
+        if (result) {
+
+          const languages = JSON.parse(result);
+
+          if (languages) {
+            languages.forEach(el => {
+
+              const lstring = el.iso.split('-');
+              if (lstring.length > 1) {
+                this.languages.push(lstring[0]);
+
+                // in case of browser language match
+                // set as default language
+                if (browserLang === lstring[0]) {
+                  this.language$ = this.store.pipe(select(selectSettingsLanguage));
+                }
+              }
+            })
+          }
+
+          this.language$ = this.store.pipe(select(selectSettingsLanguage));
+        }
+
+
+      });
+
     this.isAuthenticated$ = this.store.pipe(select(selectIsAuthenticated));
     this.stickyHeader$ = this.store.pipe(select(selectSettingsStickyHeader));
-    this.language$ = this.store.pipe(select(selectSettingsLanguage));
     this.theme$ = this.store.pipe(select(selectEffectiveTheme));
   }
 

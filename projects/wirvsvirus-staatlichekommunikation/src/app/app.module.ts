@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import {forwardRef, NgModule, Provider} from '@angular/core';
 
 import { CoreModule } from './core/core.module';
 
@@ -9,6 +9,21 @@ import { AppComponent } from './app/app.component';
 import {environment} from '../environments/environment';
 import {ApiModule} from './api/api.module';
 import { ApiTestComponent } from './api-test/api-test.component';
+import {ApiInterceptor} from './api/api.interception';
+import {HTTP_INTERCEPTORS, HttpClient} from '@angular/common/http';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
+export const API_INTERCEPTOR_PROVIDER: Provider = {
+  provide: HTTP_INTERCEPTORS,
+  useExisting: forwardRef(() => ApiInterceptor),
+  multi: true
+};
 
 
 
@@ -17,7 +32,14 @@ import { ApiTestComponent } from './api-test/api-test.component';
     // angular
     BrowserAnimationsModule,
     BrowserModule,
-
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      },
+      defaultLanguage: 'en'
+    }),
     // core
     CoreModule,
 
@@ -26,6 +48,10 @@ import { ApiTestComponent } from './api-test/api-test.component';
     ApiModule.forRoot({ rootUrl: environment.apiURI }),
   ],
   declarations: [AppComponent, ApiTestComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [
+    ApiInterceptor,
+    API_INTERCEPTOR_PROVIDER
+  ]
 })
 export class AppModule {}

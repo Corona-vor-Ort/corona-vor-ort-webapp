@@ -32,7 +32,7 @@ export class SettingsContainerComponent implements OnInit {
     { value: 'BLACK-THEME', label: 'dark' }
   ];
 
-  languages = [
+ /* languages = [
     { value: 'en', label: 'en' },
     { value: 'de', label: 'de' },
     { value: 'sk', label: 'sk' },
@@ -41,7 +41,9 @@ export class SettingsContainerComponent implements OnInit {
     { value: 'pt-br', label: 'pt-br' },
     { value: 'zh-cn', label: 'zh-cn' },
     { value: 'he', label: 'he' }
-  ];
+  ]; */
+
+  languages = [];
 
   constructor(private store: Store<State>) {}
 
