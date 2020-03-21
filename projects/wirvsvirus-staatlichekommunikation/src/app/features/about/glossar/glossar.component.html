@@ -1,29 +1,122 @@
 <div class="container mt-5">
-<mat-accordion>
+  <mat-accordion>
 
-  <mat-expansion-panel (opened)="panelOpenState = true"
-                       (closed)="panelOpenState = false">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Risikogruppe
-      </mat-panel-title>
-      <mat-panel-description>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Ausgangssperre
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>In deinem Ort gibt es aktuell eine generelle Ausgangssperre, du darfst keinen Kontakt zu Personen außerhalb
+        deines Haushalts haben.</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Ausnahmen von der Beschränkung
+        </mat-panel-title>
 
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <p>Lorem ipsum</p>
-  </mat-expansion-panel>
-  <mat-expansion-panel (opened)="panelOpenState = true"
-                       (closed)="panelOpenState = false">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Corona
-      </mat-panel-title>
-      <mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>bedeutet, dass in bestimmten Situationen die neuen Regeln nur bedingt gelten</p>
+    </mat-expansion-panel>
 
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <p>Lorem ipsum</p>
-  </mat-expansion-panel>
-</mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Autoimmunerkrankung
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>bedeutet, dass das Immunsystem mancher Menschen anfälliger ist, als das anderer. Menschen mit einer
+        Autoimmunerkrankung können sich schneller anstecken und sind vielleicht schneller schwer krank.
+      </p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Beschränkung
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>Eine Beschränkung ist eine <b>Regelung</b>, die besagt, was man tun sollte oder nicht darf. Sie wird von den
+        Behörden zB zum Schutz deiner Gesundheit bestimmt.
+      </p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Beschränkung für Versammlungen
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>gelten dann, wenn Gefahr in Verzug ist, also deine Gesundheit oder die anderer in Gefahr ist, z.B. dürfen dann
+        auch Messen, Kinos, Konzerte, Fitness Studios etc. abgesagt und geschlossen werden.</p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Kranke
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>sind z.B. Menschen, die Asthma haben oder eine (andere) Autoimmunerkrankung.</p>
+    </mat-expansion-panel>
+
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Mindestabstand
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>Ein Mindestabstand ist ein Abstand von minimal 1,5 Meter zu deinen Mitmenschen.
+        Halte dich von älteren Menschen und Kranken fern. Sie sind besonders gefährdet.
+      </p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Notfall
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>Ein Notfall trifft dann zu, wenn dein Leben, das anderer oder dein Hab und Gut in Gefahr sind.</p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Regelung
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>Eine Regelung ist kein Gesetz, aber eine wichtige Empfehlung, die unbedingt eingehalten werden soll, um z.B.
+        dich und deine Mitmenschen zu schützen.
+
+        Die Behörden informieren auch über die <b>Dauer einer Regelung</b>.
+      </p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Reisebeschränkung
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>Reisebeschränkungen gelten vor allem für Flug, Bahn, Tram, Bus, Fähre etc. Du darfst diese Verkehrsmittel dann
+        nur eingeschränkt verwenden.<br>
+        Sie werden behördlich Angeordnet, also z.B. von deinem Land oder deiner Stadt beschlossen. <br>
+        Informiere dich auch bei deinen Reiseanbietern, welche Bestimmungen/Beschränkungen für deinen Ort gelten
+      </p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p></p>
+    </mat-expansion-panel>
+
+
+  </mat-accordion>
 </div>

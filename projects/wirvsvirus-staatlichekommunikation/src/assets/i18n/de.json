@@ -65,5 +65,6 @@
   "anms.form.zip": "PLZ",
   "anms.form.tooltip.zip": "Hier PLZ eingeben",
   "anms.menu.impressum": "Impressum",
-  "anms.menu.glossar": "Glossar"
+  "anms.menu.glossar": "Glossar",
+  "anms.menu.announcements": "Meldungen"
 }
