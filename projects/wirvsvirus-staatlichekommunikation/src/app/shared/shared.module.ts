@@ -22,6 +22,9 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 
+
+import {MatExpansionModule} from '@angular/material/expansion';
+
 import {
   FontAwesomeModule,
   FaIconLibrary
@@ -74,7 +77,7 @@ import { RtlSupportDirective } from './rtl-support/rtl-support.directive';
     MatSnackBarModule,
     MatSlideToggleModule,
     MatDividerModule,
-
+    MatExpansionModule,
     FontAwesomeModule
   ],
   declarations: [
@@ -107,7 +110,7 @@ import { RtlSupportDirective } from './rtl-support/rtl-support.directive';
     MatSliderModule,
     MatDatepickerModule,
     MatNativeDateModule,
-
+    MatExpansionModule,
     FontAwesomeModule,
 
     BigInputComponent,
