@@ -47,7 +47,9 @@ import {
   faWindowMaximize,
   faStream,
   faBook,
-  faSearch
+  faSearch,
+  faBookOpen,
+  faMapMarker
 } from '@fortawesome/free-solid-svg-icons';
 import { faMediumM, faGithub } from '@fortawesome/free-brands-svg-icons';
 
@@ -140,7 +142,9 @@ export class SharedModule {
       faWindowMaximize,
       faStream,
       faBook,
-      faSearch
+      faSearch,
+      faBookOpen,
+      faMapMarker
     );
   }
 }

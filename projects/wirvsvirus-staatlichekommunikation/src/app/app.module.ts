@@ -6,9 +6,13 @@ import { CoreModule } from './core/core.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app/app.component';
+
+import { SharedModule } from './shared/shared.module';
+
 import {environment} from '../environments/environment';
 import {ApiModule} from './api/api.module';
 import { ApiTestComponent } from './api-test/api-test.component';
+
 
 
 
@@ -20,6 +24,7 @@ import { ApiTestComponent } from './api-test/api-test.component';
 
     // core
     CoreModule,
+    SharedModule,
 
     // app
     AppRoutingModule,
