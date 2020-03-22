@@ -1,4 +1,6 @@
-# WirVsVirus staatliche Kommunikation - Frontend
+# #WirVsVirus - Corona vor Ort
+
+Frontend vom Team [#coronavorot](https://twitter.com/hashtag/coronavorort)
 
 ---
 

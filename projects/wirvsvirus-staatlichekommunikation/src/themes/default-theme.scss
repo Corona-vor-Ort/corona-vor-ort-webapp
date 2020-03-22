@@ -1,18 +1,18 @@
 $theme-light-blue: (
-  50 : #e8eaf6,
-    100 : #c5cbe9,
-    200 : #9fa8da,
-    300 : #7985cb,
-    400 : #5c6bc0,
-    500 : #3f51b5,
-    600 : #394aae,
-    700 : #3140a5,
-    800 : #29379d,
-    900 : #1b278d,
-    A100 : #c6cbff,
-    A200 : #939dff,
-    A400 : #606eff,
-    A700 : #4757ff,
+  50: #e6f3fb,
+  100: #c0e1f4,
+  200: #96ceed,
+  300: #6cbae6,
+  400: #4dabe0,
+  500: #2d9cdb,
+  600: #2894d7,
+  700: #228ad2,
+  800: #1c80cd,
+  900: #116ec4,
+  A100: #f2f8ff,
+  A200: #bfdeff,
+  A400: #8cc4ff,
+  A700: #73b7ff,
   contrast: (
     50: $dark-primary-text,
     100: $dark-primary-text,
@@ -27,7 +27,7 @@ $theme-light-blue: (
     A100: $dark-primary-text,
     A200: $dark-primary-text,
     A400: $dark-primary-text,
-    A700: $dark-primary-text,
+    A700: $dark-primary-text
   )
 );
 
@@ -39,16 +39,21 @@ $anms-theme: mat-light-theme($anms-primary, $anms-accent, $anms-warn);
 
 $mat-button-border-radius: 30px;
 
-
 @mixin rounded-buttons($theme) {
   &.mat-button {
     border-radius: 16px;
   }
 }
-.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button, .mat-raised-button, .mat-fab, .mat-mini-fab {
+.mat-button,
+.mat-icon-button,
+.mat-stroked-button,
+.mat-flat-button,
+.mat-raised-button,
+.mat-fab,
+.mat-mini-fab {
   @include rounded-buttons($anms-theme);
 }
 
-.text-center{
+.text-center {
   text-align: center;
 }

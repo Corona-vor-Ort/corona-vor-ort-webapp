@@ -35,16 +35,17 @@ export class AppComponent implements OnInit {
   envName = env.envName;
   version = env.versions.app;
   year = new Date().getFullYear();
-  logo = require('../../assets/logo.png');
 
   // languages = ['en', 'de', 'sk', 'fr', 'es', 'pt-br', 'zh-cn', 'he'];
   languages = [];
+
+  logo = require('../../assets/coronavorort-logo-1-blau.png');
 
   navigation = [
     { link: 'about', label: 'anms.menu.about' },
     { link: 'about/glossar', label: 'anms.menu.glossar' , icon: 'book-open'},
     // { link: 'feature-list', label: 'anms.menu.features' },
-    { link: 'examples', label: 'anms.menu.examples' }
+   //  { link: 'examples', label: 'anms.menu.examples' }
   ];
 
   navigationSideMenu = [

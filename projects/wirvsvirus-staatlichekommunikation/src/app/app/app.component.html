@@ -1,9 +1,9 @@
-<div [class]="'theme-wrapper ' + (theme$ | async )" >
+<div [class]="'theme-wrapper ' + (theme$ | async )">
 
   <!-- <mat-sidenav-container> -->
-    <div class="mat-sidenav-container mat-drawer-container">
+  <div class="mat-sidenav-container mat-drawer-container">
 
-      <!-- <mat-sidenav #sidenav mode="push">
+    <!-- <mat-sidenav #sidenav mode="push">
       <div class="branding"><img [src]="logo" />
         <span>{{ 'anms.title.short' | translate}}</span></div>
       <mat-nav-list>
@@ -17,37 +17,34 @@
       </mat-nav-list>
     </mat-sidenav> -->
 
-      <div class="wrapper">
+    <div class="wrapper">
 
-        <div class="toolbar" [style.position]="(stickyHeader$ | async) ? 'fixed' : 'inherit'"
-          [class.mat-elevation-z4]="(stickyHeader$ | async)">
-          <mat-toolbar color="primary">
-            <!-- <button mat-icon-button class="d-md-none" (click)="sidenav.open()">
+      <div class="toolbar" [style.position]="(stickyHeader$ | async) ? 'fixed' : 'inherit'"
+        [class.mat-elevation-z4]="(stickyHeader$ | async)">
+        <mat-toolbar color="primary">
+          <!-- <button mat-icon-button class="d-md-none" (click)="sidenav.open()">
             <fa-icon icon="bars"></fa-icon>
 
           </button> -->
 
 
-            <span routerLink="" class="branding spacer center d-inline d-sm-none">
-              <img [src]="logo" /></span>
-            <span routerLink="" class="branding spacer center d-none d-sm-inline d-md-none"><img [src]="logo" /> {{
-            'anms.title.short' | translate }}</span>
-            <span routerLink="" class="branding spacer d-none d-md-inline"><img [src]="logo" /> {{ 'anms.title.long' | translate
-            }}</span>
+          <span routerLink="" class="branding spacer d-none d-sm-inline">
+            <img [src]="logo" /> </span>
 
 
-            <span>
-              <button mat-button class="nav-button" *ngFor="let item of navigation" [routerLink]="[item.link]"
-                [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
 
-                <fa-icon icon="{{item.icon}}" *ngIf="item.icon" class="d-block d-md-inline" style="height: 24px;">
-                </fa-icon>
+          <span class="d-flex justify-content-between menu">
+            <button mat-button class="nav-button" *ngFor="let item of navigation" [routerLink]="[item.link]"
+              [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
 
-                {{item.label | translate}}
-              </button>
-            </span>
+              <fa-icon icon="{{item.icon}}" *ngIf="item.icon" class="d-block d-md-inline">
+              </fa-icon>
 
-            <!-- <button mat-button mat-stroked-button color="accent" *ngIf="!(isAuthenticated$ | async)" (click)="onLoginClick()">
+              {{item.label | translate}}
+            </button>
+          </span>
+
+          <!-- <button mat-button mat-stroked-button color="accent" *ngIf="!(isAuthenticated$ | async)" (click)="onLoginClick()">
             {{ 'anms.menu.login' | translate }}
           </button>
 
@@ -56,70 +53,63 @@
                   [matMenuTriggerFor]="toolbarUserMenu">
             <fa-icon icon="user-circle"></fa-icon>
           </button> -->
-            <mat-menu #toolbarUserMenu="matMenu">
-              <button mat-menu-item (click)="onLogoutClick()">
-                <mat-icon>
-                  <fa-icon icon="power-off"></fa-icon>
-                </mat-icon>
-                <span>{{ 'anms.menu.logout' | translate }}</span>
-              </button>
-            </mat-menu>
-
-            <button mat-icon-button routerLink="settings" class="d-none d-sm-inline"
-              [matTooltip]="'anms.menu.settings' | translate">
-              <fa-icon icon="cog"></fa-icon>
-            </button>
-
-            <button mat-icon-button class="d-none d-sm-inline" *ngIf="theme$ | async as theme"
-              [matTooltip]="'anms.menu.contrastTheme' | translate" (click)="onContrast(theme)">
-              aA
-            </button>
 
 
+          <button mat-icon-button routerLink="settings" class="d-none d-sm-inline"
+            [matTooltip]="'anms.menu.settings' | translate">
+            <fa-icon icon="cog"></fa-icon>
+          </button>
 
+          <button mat-icon-button class="d-none d-sm-inline" *ngIf="theme$ | async as theme"
+            [matTooltip]="'anms.menu.contrastTheme' | translate" (click)="onContrast(theme)">
+            aA
+          </button>
+
+
+          <!--
             <span *ngIf="language$ | async as language">
               <mat-select [ngModel]="language" (selectionChange)="onLanguageSelect($event)">
                 <mat-option *ngFor="let l of languages" [value]="l">
                   {{ l.toUpperCase() }}
                 </mat-option>
               </mat-select>
-            </span>
-          </mat-toolbar>
-        </div>
-
-        <div class="content"
-          [@routeAnimations]="o.isActivated && o.activatedRoute.routeConfig.data && o.activatedRoute.routeConfig.data.title">
-          <router-outlet #o="outlet"></router-outlet>
-        </div>
-
-        <div class="footer d-none d-md-block">
-          <div class="row">
-            <div class="col-sm-12 links">
-
-              <a href="https://twitter.com/hashtag/wirvsvirus" target="_blank">
-                <fa-icon [icon]="['fab','twitter']"></fa-icon>
-                <span>Twitter</span>
-              </a>
-              <a href="https://www.youtube.com/channel/UCPv_kdljMHmt4kLNB7QGn0g" target="_blank">
-                <fa-icon [icon]="['fab','youtube']"></fa-icon>
-                <span>Youtube</span>
-              </a>
-
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12 signature">
-              &#169; <span class="year">{{year}}</span> - #wirvsvirus Team
-              <a routerLink="about/impressum">
-
-                <span>{{ 'anms.menu.impressum' | translate }} </span>
-              </a>
-            </div>
-          </div>
-        </div>
-
+            </span> -->
+        </mat-toolbar>
       </div>
+
+      <div class="content"
+        [@routeAnimations]="o.isActivated && o.activatedRoute.routeConfig.data && o.activatedRoute.routeConfig.data.title">
+        <router-outlet #o="outlet"></router-outlet>
+      </div>
+
+      <div class="footer d-none d-md-block">
+        <div class="row">
+          <div class="col-sm-12 links">
+
+            <a href="https://twitter.com/hashtag/coronavorort" target="_blank">
+              <fa-icon [icon]="['fab','twitter']"></fa-icon>
+              <span>Twitter</span>
+            </a>
+            <a href="https://www.youtube.com/channel/UCdPN2sk3a30p8Vhi4Wjs7gQ" target="_blank">
+              <fa-icon [icon]="['fab','youtube']"></fa-icon>
+              <span>Youtube</span>
+            </a>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 signature">
+            &#169; <span class="year">{{year}}</span> - #coronavorort Team
+            <a routerLink="about/impressum">
+
+              <span>{{ 'anms.menu.impressum' | translate }} </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </div>
   <!-- </mat-sidenav-container> -->
 
 </div>
