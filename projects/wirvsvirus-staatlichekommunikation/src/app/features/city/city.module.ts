@@ -5,9 +5,12 @@ import { CityRoutingModule } from './city-routing.module';
 import { AnnouncementsComponent } from './announcements/announcements.component';
 import { CityComponent } from './city/city.component';
 import {BottomNavModule} from 'ngx-bottom-nav';
+import { HintsComponent } from './hints/hints.component';
+import { GlossarComponent } from './glossar/glossar.component';
+import { TabnavComponent } from './tabnav/tabnav.component';
 
 @NgModule({
-  declarations: [AnnouncementsComponent, CityComponent],
+  declarations: [AnnouncementsComponent, CityComponent, HintsComponent, GlossarComponent, TabnavComponent],
   imports: [CommonModule, SharedModule, CityRoutingModule, BottomNavModule]
 })
 export class CityModule {}

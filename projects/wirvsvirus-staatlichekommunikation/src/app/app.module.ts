@@ -11,7 +11,6 @@ import { SharedModule } from './shared/shared.module';
 
 import {environment} from '../environments/environment';
 import {ApiModule} from './api/api.module';
-import { ApiTestComponent } from './api-test/api-test.component';
 
 import {HTTP_INTERCEPTORS, HttpClient} from '@angular/common/http';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
@@ -55,7 +54,7 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
     AppRoutingModule,
     ApiModule.forRoot({ rootUrl: environment.apiURI }),
   ],
-  declarations: [AppComponent, ApiTestComponent],
+  declarations: [AppComponent],
   bootstrap: [AppComponent],
   providers: [
     ApiInterceptor,
