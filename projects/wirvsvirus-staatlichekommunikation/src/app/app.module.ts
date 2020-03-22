@@ -17,6 +17,7 @@ import {HTTP_INTERCEPTORS, HttpClient} from '@angular/common/http';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {ApiInterceptor} from './core/api.interception';
+import {BottomNavModule} from 'ngx-bottom-nav';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -37,6 +38,7 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
     // angular
     BrowserAnimationsModule,
     BrowserModule,
+    BottomNavModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

@@ -30,7 +30,7 @@ export class AnnouncementsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.currZip$ = this.store.pipe(select(selectZip));
-
+    console.log(this.currZip$);
 
   }
 

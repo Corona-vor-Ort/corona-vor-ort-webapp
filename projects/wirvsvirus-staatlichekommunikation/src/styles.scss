@@ -6,6 +6,7 @@
 @import 'styles-reset';
 
 @import '~@angular/material/theming';
+@import '~ngx-bottom-nav/theming';
 
 @include mat-core();
 
@@ -41,19 +42,23 @@
 .default-theme {
   @include angular-material-theme($anms-theme);
   @include custom-components-theme($anms-theme);
+  @include ngx-bottom-nav-theme($anms-theme);
 }
 
 .light-theme {
   @include angular-material-theme($anms-light-theme);
   @include custom-components-theme($anms-light-theme);
+  @include ngx-bottom-nav-theme($anms-light-theme);
 }
 
 .black-theme {
   @include angular-material-theme($anms-black-theme);
   @include custom-components-theme($anms-black-theme);
+  @include ngx-bottom-nav-theme($anms-black-theme);
 }
 
 .nature-theme {
   @include angular-material-theme($anms-nature-theme);
   @include custom-components-theme($anms-nature-theme);
+  @include ngx-bottom-nav-theme($anms-nature-theme);
 }

@@ -7,18 +7,6 @@ const routes: Routes = [
   {
     path: ':zipcode',
     component: CityComponent,
-    children: [
-      {
-        path: '',
-        redirectTo: 'announcements',
-        pathMatch: 'full'
-      },
-      {
-        path: 'announcements',
-        component: AnnouncementsComponent,
-        data: { title: 'anms.menu.announcments' }
-      }
-    ]
   }
 ];
 
