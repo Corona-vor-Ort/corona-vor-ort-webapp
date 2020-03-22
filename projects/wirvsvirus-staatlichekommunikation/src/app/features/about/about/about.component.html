@@ -9,26 +9,35 @@
       </div>
       <div class="row flex-grow-1 justify-content-center">
         <div class="">
-          <anms-big-input rtl [placeholder]="'anms.form.zip' | translate" [value]="zipCode" class="mb-1"
+          <!-- <anms-big-input rtl [placeholder]="'anms.form.zip' | translate" [value]="zipCode" class="mb-1"
             (keyup)="onZipCodeChange($event.target.value)" (keyup.enter)="search()">
-            <!-- <anms-big-input-action fontSet="fas" fontIcon="fa-search" faIcon="search" color="accent"
-            [matTooltip]="'anms.form.tooltip.zip' | translate" (action)="search()" matTooltipPosition="before">
-          </anms-big-input-action> -->
 
-          </anms-big-input>
+
+          </anms-big-input> -->
+          <div>
+            <span class="plz-input-instruction">
+              {{'anms.form.enter-zip' | translate}}
+            </span>
+            <mat-card class="plz-input">
+              <input [value]="zipCode"
+                     placeholder="_____"
+                     (keyup)="onZipCodeChange($event.target.value)"
+                     (keyup.enter)="search()"
+                     class="zip-code"/>
+            </mat-card>
+          </div>
           <div class="d-block mt-2">
-            <button mat-raised-button color="primary" (click)="search()" style="width: 100%;"><fa-icon icon="map-marker"></fa-icon> auswählen</button></div>
+            <button mat-raised-button color="primary" (click)="search()" style="width: 160px;"><fa-icon icon="search" class="mr-2"></fa-icon> Suchen</button></div>
         </div>
 
       </div>
       <div class="row flex-grow-1 justify-content-center">
-        <div class="lead text-center"> Corona vor Ort liefert dir die wichtigsten Meldungen und Informationen speziell zu deinem
-          Standort </div>
+        <div class="lead text-center"> {{ 'anms.start.description' | translate }} </div>
       </div>
     </div>
 
 
-  <div class="gradient">
+  <!-- <div class="gradient">
     <div class="container">
       <h1>{{ 'anms.title.long' | translate }}</h1>
       <p class="text-center">{{ 'anms.start.description' | translate }}</p>
@@ -56,6 +65,6 @@
       </div>
     </div>
 
-  </div>
+  </div> -->
 </div>
 </div>

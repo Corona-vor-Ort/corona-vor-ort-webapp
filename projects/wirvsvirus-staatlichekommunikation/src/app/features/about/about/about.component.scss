@@ -141,6 +141,9 @@ input[type='number'] {
 
 
 @media (max-width: map-get($grid-breakpoints, md)) {
+  .display-1 {
+    font-size: 4rem;
+  }
   .background {
     .actions {
       margin: 50px 0;
