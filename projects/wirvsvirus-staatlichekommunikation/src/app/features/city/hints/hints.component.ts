@@ -42,6 +42,7 @@ export class HintsComponent implements OnInit, OnDestroy {
           .then((result: any) => {
 
             this.hints = JSON.parse(result);
+            this.cdr.detectChanges();
 
           });
       }

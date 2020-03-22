@@ -48,7 +48,7 @@ export class AnnouncementsComponent implements OnInit, OnDestroy {
           .then((result: any) => {
 
             this.announcements = JSON.parse(result);
-
+            this.cdr.detectChanges();
           });
       }
 
