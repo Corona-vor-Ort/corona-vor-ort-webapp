@@ -30,7 +30,7 @@ export class AboutComponent implements OnInit {
   search() {
     if (this.checkZip()) {
       this.router.navigate(['/city', this.zipCode]);
-      this.store.dispatch(actionSettingsChangeCity({city: this.zipCode }));
+      this.store.dispatch(actionSettingsChangeCity({zip: this.zipCode }));
     }
 
   }
