@@ -7,7 +7,7 @@ import {select, Store} from '@ngrx/store';
 import {SettingsState, State} from '../../../core/settings/settings.model';
 import {Observable} from 'rxjs';
 import {take} from 'rxjs/operators';
-import {selectSettings} from '../../../core/settings/settings.selectors';
+import {selectSettings, selectSettingsCity} from '../../../core/settings/settings.selectors';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -34,6 +34,7 @@ export class AnnouncementsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.currZip$ = this.store.pipe(select(selectSettingsCity))
     this.route.paramMap.subscribe(params => {
 
       if (params.get('zipcode')) {
