@@ -41,7 +41,6 @@ export class CityComponent implements OnInit {
 
       if (params.get('zipcode')) {
 
-        const that = this;
         // get City data
         this.apiService
           .apiCitiesByZipZipGet({

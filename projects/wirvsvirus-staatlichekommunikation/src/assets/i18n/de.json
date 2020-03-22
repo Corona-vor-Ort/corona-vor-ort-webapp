@@ -75,5 +75,9 @@
   "anms.menu.glossar": "Lexikon",
   "anms.menu.announcements": "Meldungen",
   "anms.menu.hints": "Hinweise",
-  "anms.menu.extra": "Weiteres"
+  "anms.menu.extra": "Weiteres",
+
+  "anms.nodata.title": "Keine Daten vorhanden",
+  "anms.nodata.sutitle": "",
+  "anms.nodata.message": "Aktuell keine Daten vorhanden"
 }

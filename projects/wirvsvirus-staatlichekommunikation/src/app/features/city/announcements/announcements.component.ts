@@ -1,12 +1,14 @@
-import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 
 import {AppState, ROUTE_ANIMATIONS_ELEMENTS, selectIsAuthenticated, selectZip} from '../../../core/core.module';
 import { Announcement } from './announcement.model';
 import {ApiService} from '../../../api/services/api.service';
 import {select, Store} from '@ngrx/store';
-import {State} from '../../../core/settings/settings.model';
+import {SettingsState, State} from '../../../core/settings/settings.model';
 import {Observable} from 'rxjs';
 import {take} from 'rxjs/operators';
+import {selectSettings} from '../../../core/settings/settings.selectors';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'anms-announcements',
@@ -17,21 +19,40 @@ import {take} from 'rxjs/operators';
 export class AnnouncementsComponent implements OnInit, OnDestroy {
 
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
-  announcements: Announcement[] = [];
+  announcements: [] = [];
 
+  currZip: string;
   currZip$: Observable<string>;
 
   constructor(
+    private route: ActivatedRoute,
     private apiService: ApiService,
-    private store: Store<AppState>
+    private store: Store<State>,
+    private cdr: ChangeDetectorRef
   ) {
 
   }
 
   ngOnInit() {
-    this.currZip$ = this.store.pipe(select(selectZip));
-    console.log(this.currZip$);
+    this.route.paramMap.subscribe(params => {
 
+      if (params.get('zipcode')) {
+        console.log(params.get('zipcode'));
+
+        // get City data
+        this.apiService
+          .apiMessagesZipGet({
+            zip: params.get('zipcode')
+          })
+          .toPromise()
+          .then((result: any) => {
+
+            this.announcements = JSON.parse(result);
+
+          });
+      }
+
+    });
   }
 
   ngOnDestroy(): void {

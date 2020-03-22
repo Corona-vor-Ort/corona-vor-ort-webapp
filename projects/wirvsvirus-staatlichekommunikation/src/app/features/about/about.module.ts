@@ -11,7 +11,10 @@ import { GlossarComponent } from './glossar/glossar.component';
 @NgModule({
 
   declarations: [AboutComponent, ImpressumComponent, GlossarComponent],
-  imports: [CommonModule, SharedModule, AboutRoutingModule]
+  imports: [CommonModule, SharedModule, AboutRoutingModule],
+  exports: [
+    GlossarComponent
+  ]
 })
 export class AboutModule {
 }

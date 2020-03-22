@@ -2,10 +2,17 @@
   <h4>Meldungen</h4>
 
   <mat-card *ngFor="let announcement of announcements">
-    <mat-card-title>{{announcement.title}}</mat-card-title>
-    <mat-card-subtitle>{{announcement.date | date}}</mat-card-subtitle>
-    <mat-card-content>{{announcement.message}}</mat-card-content>
+    <mat-card-title>{{announcement.headline}}</mat-card-title>
+    <mat-card-subtitle>{{announcement.sent | date}}</mat-card-subtitle>
+    <mat-card-content>{{announcement.description}}</mat-card-content>
   </mat-card>
+
+  <mat-card *ngIf="announcements.length == 0">
+    <mat-card-title>{{'anms.nodata.title' | translate}}</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+    <mat-card-content>{{'anms.nodata.message' | translate}}</mat-card-content>
+  </mat-card>
+
 
 </div>
 <anms-tabnav></anms-tabnav>
