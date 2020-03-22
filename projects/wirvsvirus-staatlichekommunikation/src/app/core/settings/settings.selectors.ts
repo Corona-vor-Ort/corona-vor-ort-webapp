@@ -61,7 +61,7 @@ export const selectIsNightHour = createSelector(
 
 export const selectZip = createSelector(
   selectSettings,
-  settings => settings.city
+  settings => settings.zip
 );
 
 

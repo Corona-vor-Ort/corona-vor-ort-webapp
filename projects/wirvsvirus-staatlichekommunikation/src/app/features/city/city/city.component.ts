@@ -54,7 +54,7 @@ export class CityComponent implements OnInit {
             if (cityData[0] && cityData[0].translations[0] && cityData[0].translations[0].name) {
               this.locationData.name = cityData[0].translations[0].name;
               this.locationData.zip = params.get('zipcode');
-              this.store.dispatch(actionSettingsChangeCity({city: this.locationData.zip }));
+              this.store.dispatch(actionSettingsChangeCity({zip: this.locationData.zip }));
               this.locationDataLoaded = true;
               this.cdr.detectChanges();
               console.log('locationDataLoaded');
