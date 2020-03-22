@@ -54,6 +54,7 @@
   "anms.settings.themes.dark": "Dunkel",
   "anms.settings.themes.light": "Hell",
   "anms.settings.themes.nature": "Natur",
+  "anms.settings.themes.contrast": "Groß mit Kontrast",
   "anms.settings.themes.night-mode": "Auto Nachtmodus (von 21:00 bis 7:00)",
   "anms.settings.themes.placeholder": "Farbthema",
   "anms.settings.themes.saneago": "",
@@ -62,6 +63,7 @@
   "anms.settings.title": "Einstellungen",
   "anms.title.long": "Corona vor Ort",
   "anms.title.short": "Corona vor Ort",
+  "anms.menu.contrastTheme": "Große Schrift mit viel Kontrast",
 
 
   "anms.start.description": "Corona vor Ort liefert Dir die wichtigsten Meldungen und Informationenen speziell zu Deinem Standort.",

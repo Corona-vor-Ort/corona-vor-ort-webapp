@@ -1,11 +1,11 @@
 const packageJson = require('../../../../package.json');
 
 export const environment = {
-  appName: 'Angular Ngrx Material Starter',
+  appName: 'Corona vor Ort',
   envName: 'PROD',
   production: true,
   test: false,
-  i18nPrefix: '/wirvsvirus-staatlichekommunikation',
+  i18nPrefix: '',
   apiURI: 'https://api.corona-vor-ort.de',
   versions: {
     app: packageJson.version,

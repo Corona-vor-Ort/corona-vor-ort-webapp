@@ -1,4 +1,10 @@
-<div class="container mt-5">
+<div class="container my-5">
+  <p class="lead">
+    Dich erschlägt die Flut an Informationen zum Coronavirus? Kein Problem, du bist nicht allein! Wir haben dir auf
+    unserer Website die wichtigsten Neuigkeiten übersichtlich, kurz und vor allem gut verständlich zusammengestellt.
+    Dafür greifen wir immer auf die neusten Meldungen öffentlicher Stellen zurück. Bleib stressfrei auf dem neuesten
+    Stand mit Corona vor Ort.
+  </p>
   <mat-accordion>
 
     <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
@@ -48,8 +54,82 @@
           Beschränkung für Versammlungen
         </mat-panel-title>
       </mat-expansion-panel-header>
-      <p>gelten dann, wenn Gefahr in Verzug ist, also deine Gesundheit oder die anderer in Gefahr ist, z.B. dürfen dann
+      <p>gelten dann, wenn Gefahr in Verzug ist, also deine Gesundheit oder die anderer in Gefahr ist. Z.B. dürfen dann
         auch Messen, Kinos, Konzerte, Fitness Studios etc. abgesagt und geschlossen werden.</p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          COVID-19, SARS-CoV-2 oder Coronavirus
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p> ist eine grippeähnliche Viruserkrankung, die sich über Tröpfcheninfektion übertragen lässt. Die
+        unterschiedlichen Namen meinen immer ein und dieselbe Krankheit. </p>
+
+      <p> Die Krankheit äußert sich im schlimmsten Fall durch Lungenentzündungen, die auch in weiterer Folge zum Tod
+        führen können. Es dauert eine Weile (Inkubationszeit) bis die Krankheit bemerkt werden kann. So können auch
+        scheinbar gesunde Menschen, die Krankheit weitergeben. Darum ist sie so gefährlich.</p>
+    </mat-expansion-panel>
+
+
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Epidemie
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>
+        Eine Epidemie, auch Seuche genannt, ist das vermehrte Auftreten von Krankheitsfällen einheitlicher Ursache
+        innerhalb einer menschlichen Population, solange es zeitlich und örtlich begrenzt bleibt, und entspricht damit
+        einem großen Ausbruch einer Krankheit.
+      </p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Handlungsempfehlung
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p> ist eine Empfehlung, die zum Schutz der Bürger ausgesprochen wird. Im Gegensatz z.B. zu der
+        Allgemeinverfügung, hat ein “Verstoß” keine strafrechtlichen Konsequenzen.
+      </p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Infektion
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>ist die Ansteckung mit einer Krankheit durch einen Krankheitserreger, hier durch ein Virus.
+      </p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Inkubationszeit
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p> beschreibt die Zeit, die zwischen Infektion mit einem Krankheitserreger und dem Auftreten der ersten Symptome
+        vergeht.</p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Isolation
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>
+        Man nimmt Abstand zu sozialen Kontakten und “isoliert” sich damit. Das kann heißen, dass man zuhause bleibt und
+        zB, wenn überhaupt, nur für wichtige Besorgungen raus geht. Der Begriff “Selbstisolation” bedeutet eine
+        freiwillige Kontaktsperre zu anderen Menschen. Man schränkt seine Kontakte auf ein Minimum ein zB auf die
+        Familie oder WG-PartnerInnen.
+      </p>
     </mat-expansion-panel>
 
     <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
@@ -85,6 +165,30 @@
     <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
       <mat-expansion-panel-header>
         <mat-panel-title>
+          Pandemie
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>ist eine Krankheit, die sich über mehrere Länder oder sogar Kontinente ausbreitet. Der Coronavirus wird seit
+        dem 11.03.2020 als Pandemie eingestuft.
+      </p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Population
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>
+        damit ist die Bevölkerung gemeint.
+      </p>
+    </mat-expansion-panel>
+
+
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
           Regelung
         </mat-panel-title>
       </mat-expansion-panel-header>
@@ -111,11 +215,80 @@
     <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
       <mat-expansion-panel-header>
         <mat-panel-title>
+          Risikogebiete
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p> sind Regionen, die besonders intensiv von dem Coronavirus betroffen sind. Du solltest nach Möglichkeit aus
+        diesen Gebieten zurückkehren und danach 14 Tage lang in freiwilliger Quarantäne bleiben, um sicherzustellen,
+        dass du niemanden ansteckst.
+      </p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Risikopatienten
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p> Sind Menschen, die z.B. eine Vorerkrankung haben oder aufgrund ihres Alters oder einer Autoimmunerkrankung
+        anfälliger für eine schwere Erkrankung sind.
+      </p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Quarantäne
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>In Quarantäne geht man z.B., wenn man sich mit einer Erkrankung angesteckt hat, die für andere Menschen
+        gefährlich sein könnte. Der Coronavirus gehört dazu. Man isoliert sich von anderen Menschen, bleibt z.B. zuhause
+        und wird auch bei Bedarf krank geschrieben. Man kann auch zum Schutz anderer oder für sich selbst in <b>eine
+          freiwillige Quarantäne</b> gehen. Das bedeutet, man isoliert sich, ohne, dass ein direkter Befund, eine
+        Erkrankung
+        oder Symptome vorliegen. Eine Quarantäne dauert für gewöhnlich 14 Tage. Bei Corona können es bis zu 30 Tage
+        sein.
+      </p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Symptom
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p> ist ein Anzeichen oder Zeichen bzw. (typisches) Merkmal (Krankheitsmerkmal) für eine Erkrankung.</p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Tröpfcheninfektion
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p> nennt man die Übertragung von Krankheitserregern durch zB Husten oder Niesen. Sie kann auch durch
+        Körperkontakt (Händeschütteln, Umarmung, Kuss…) übertragen werden. </p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Vorerkrankung
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>
+        Wer zum Zeitpunkt einer Epidemie oder Pandemie schon krank ist, ist anfälliger für z.B. den <b>Coronavirus</b>
+        und kann schwer erkranken. </p>
+    </mat-expansion-panel>
+
+    <!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
 
         </mat-panel-title>
       </mat-expansion-panel-header>
       <p></p>
-    </mat-expansion-panel>
+    </mat-expansion-panel> -->
 
 
   </mat-accordion>

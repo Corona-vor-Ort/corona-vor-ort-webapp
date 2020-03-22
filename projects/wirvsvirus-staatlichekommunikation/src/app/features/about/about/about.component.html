@@ -1,19 +1,13 @@
 <div class="background">
-
-
   <div class="container" style="height:100%">
-
     <div class="flex-column d-flex" style="height:100%">
       <div class="row flex-grow-1 justify-content-center">
-        <div class="display-1 text-center">{{ 'anms.title.long' | translate }}</div>
+        <div class="display-1 text-center">
+          {{ 'anms.title.long' | translate }}
+        </div>
       </div>
       <div class="row flex-grow-1 justify-content-center">
         <div class="">
-          <!-- <anms-big-input rtl [placeholder]="'anms.form.zip' | translate" [value]="zipCode" class="mb-1"
-            (keyup)="onZipCodeChange($event.target.value)" (keyup.enter)="search()">
-
-
-          </anms-big-input> -->
           <div>
             <span class="plz-input-instruction">
               {{'anms.form.enter-zip' | translate}}
@@ -29,44 +23,19 @@
             </mat-card>
           </div>
           <div class="d-block mt-2">
-            <button mat-raised-button color="primary" [disabled]="!checkZip()" (click)="search()" style="width: 160px;"><fa-icon icon="search" class="mr-2"></fa-icon> Suchen</button></div>
+             <button [disabled]="!checkZip()" mat-raised-button color="primary" (click)="search()"
+                    style="width: 160px;">
+              <fa-icon icon="search" class="mr-2"></fa-icon>
+              Suchen
+            </button>
+          </div>
         </div>
 
       </div>
       <div class="row flex-grow-1 justify-content-center">
-        <div class="lead text-center"> {{ 'anms.start.description' | translate }} </div>
+        <div
+          class="lead text-center"> {{ 'anms.start.description' | translate }} </div>
       </div>
     </div>
-
-
-  <!-- <div class="gradient">
-    <div class="container">
-      <h1>{{ 'anms.title.long' | translate }}</h1>
-      <p class="text-center">{{ 'anms.start.description' | translate }}</p>
-
-      <div class="d-flex justify-content-center">
-        <div>
-          <span class="plz-input-instruction">
-            {{'anms.form.enter-zip' | translate}}
-          </span>
-          <mat-card class="plz-input">
-            <input [value]="zipCode"
-                   placeholder="_____"
-                   (keyup)="onZipCodeChange($event.target.value)"
-                   (keyup.enter)="search()"
-                   class="zip-code"/>
-          </mat-card>
-        </div>
-      </div>
-
-      <div class="d-flex justify-content-center mt-3">
-        <button mat-raised-button (click)="search()">
-          <fa-icon icon="search" class="mr-2"></fa-icon>
-          Suchen
-        </button>
-      </div>
-    </div>
-
-  </div> -->
-</div>
+  </div>
 </div>

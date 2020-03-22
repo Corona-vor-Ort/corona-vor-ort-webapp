@@ -18,7 +18,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/wirvsvirus-staatlichekommunikation",
+            "outputPath": "dist/",
             "index": "projects/wirvsvirus-staatlichekommunikation/src/index.html",
             "main": "projects/wirvsvirus-staatlichekommunikation/src/main.ts",
             "polyfills": "projects/wirvsvirus-staatlichekommunikation/src/polyfills.ts",
