@@ -32,13 +32,16 @@ export class AppComponent implements OnInit {
   envName = env.envName;
   version = env.versions.app;
   year = new Date().getFullYear();
-  logo = require('../../assets/logo.png');
+  logo = require('../../assets/coronavorort-logo-1-blau.png');
   languages = ['en', 'de', 'sk', 'fr', 'es', 'pt-br', 'zh-cn', 'he'];
   navigation = [
-    { link: 'about', label: 'anms.menu.about' },
+    // { link: 'about', label: 'anms.menu.about' },
+    { link: 'meldungen', label: 'anms.menu.announcements' , icon: 'comment-alt'},
+    { link: 'hinweise', label: 'anms.menu.hinweise' , icon: 'info-circle'},
     { link: 'about/glossar', label: 'anms.menu.glossar' , icon: 'book-open'},
+    { link: 'weiteres', label: 'anms.menu.more' , icon: 'ellipsis-h'},
     // { link: 'feature-list', label: 'anms.menu.features' },
-    { link: 'examples', label: 'anms.menu.examples' }
+   //  { link: 'examples', label: 'anms.menu.examples' }
   ];
   navigationSideMenu = [
     ...this.navigation,

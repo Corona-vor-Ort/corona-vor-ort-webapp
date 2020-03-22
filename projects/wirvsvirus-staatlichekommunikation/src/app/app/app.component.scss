@@ -36,7 +36,7 @@
       img {
         position: relative;
         top: -2px;
-        width: 48px;
+
         height: 48px;
       }
     }
@@ -54,6 +54,9 @@
       width: 40px;
       font-size: 14px;
     }
+    fa-icon {
+      height: 24px;
+    }
 
     @media (max-width: map-get($grid-breakpoints, lg)) {
       .nav-button {
@@ -61,8 +64,19 @@
         padding: 0 10px;
       }
     }
-
-
+    @media (max-width: map-get($grid-breakpoints, sm)) {
+      .nav-button {
+        min-width: 0;
+        padding: 0 5px;
+      }
+      .menu {
+        width: 100%;
+      }
+      fa-icon {
+        font-size: 18px;
+        height: 18px;
+      }
+    }
   }
 
   .wrapper {
@@ -157,15 +171,26 @@
       margin-top: 56px !important;
     }
   }
+  @media (min-width: map-get($grid-breakpoints, md)) {
+  .branding img {
+    filter: brightness(0) invert(1);
+  }
+}
   @media (max-width: map-get($grid-breakpoints, md)) {
     .toolbar {
-     bottom: 0;
-   }
-   .content {
-     margin-top: 0 !important;
-     padding-bottom: 64px;
-   }
- }
+      bottom: 0;
+    }
+    .content {
+      margin-top: 0 !important;
+      padding-bottom: 64px;
+    }
+  }
+
+  @media (max-width: $toolbar-breakpoint) {
+    .content {
+      padding-bottom: 56px;
+    }
+  }
 }
 
 // mat-sidenav {

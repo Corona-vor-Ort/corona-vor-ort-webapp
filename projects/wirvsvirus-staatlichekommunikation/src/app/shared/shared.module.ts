@@ -49,7 +49,10 @@ import {
   faBook,
   faSearch,
   faBookOpen,
-  faMapMarker
+  faMapMarker,
+  faCommentAlt,
+  faInfoCircle,
+  faEllipsisH
 } from '@fortawesome/free-solid-svg-icons';
 import { faMediumM, faGithub } from '@fortawesome/free-brands-svg-icons';
 
@@ -144,7 +147,10 @@ export class SharedModule {
       faBook,
       faSearch,
       faBookOpen,
-      faMapMarker
+      faMapMarker,
+      faCommentAlt,
+      faInfoCircle,
+      faEllipsisH
     );
   }
 }

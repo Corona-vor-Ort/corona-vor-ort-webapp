@@ -8,7 +8,7 @@
   .mat-sidenav-container {
     mat-toolbar {
       button {
-        opacity: .5;
+        opacity: 0.5;
         &.active {
           color: mat-color($primary, default-contrast);
           opacity: 1;
@@ -20,8 +20,20 @@
         color: mat-color($primary, default-contrast);
       }
     }
-
-
+    @media (max-width: map-get($grid-breakpoints, md)) {
+      mat-toolbar {
+        background-color: #fff !important;
+        color: mat-color($primary);
+        button {
+          color: mat-color($primary);
+          opacity: 0.54;
+          &.active {
+            color: mat-color($primary);
+            opacity: 1;
+          }
+        }
+      }
+    }
 
     .footer {
       color: mat-color($primary, default-contrast);
