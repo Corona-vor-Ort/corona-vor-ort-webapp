@@ -5,7 +5,7 @@ export const environment = {
   envName: 'PROD',
   production: true,
   test: false,
-  i18nPrefix: '/',
+  i18nPrefix: '',
   apiURI: 'https://api.corona-vor-ort.de',
   versions: {
     app: packageJson.version,
