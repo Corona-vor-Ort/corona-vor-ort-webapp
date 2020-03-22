@@ -22,12 +22,6 @@ export class CityComponent implements OnInit {
   locationData: Location = {};
   locationDataLoaded = false;
 
-  navigationtabs: BottomNavItem[] = [
-    {icon: 'infos', label: 'anms.menu.announcements | translate', routerLink: '/announcements'},
-    {icon: 'search', label: 'anms.menu.hints | translate', routerLink: '/hints'},
-    {icon: 'forum', label: 'anms.menu.glossar | translate', routerLink: '/glossar'},
-    {icon: 'forum', label: 'anms.menu.extra | translate', routerLink: '/extra'}
-  ];
 
   constructor(
     private route: ActivatedRoute,
