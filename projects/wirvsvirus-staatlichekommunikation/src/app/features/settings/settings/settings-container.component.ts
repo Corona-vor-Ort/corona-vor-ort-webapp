@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../core/core.module';
+import {ROUTE_ANIMATIONS_ELEMENTS, selectSettingsLanguage} from '../../../core/core.module';
 
 import {
   actionSettingsChangeAnimationsElements,
@@ -14,6 +14,7 @@ import {
 } from '../../../core/settings/settings.actions';
 import { SettingsState, State } from '../../../core/settings/settings.model';
 import { selectSettings } from '../../../core/settings/settings.selectors';
+import {ApiService} from '../../../api/services/api.service';
 
 @Component({
   selector: 'anms-settings',
@@ -46,10 +47,42 @@ export class SettingsContainerComponent implements OnInit {
 
   languages = [];
 
-  constructor(private store: Store<State>) {}
+  constructor(
+    private store: Store<State>,
+    private apiService: ApiService
+  ) {}
 
   ngOnInit() {
     this.settings$ = this.store.pipe(select(selectSettings));
+
+    this.apiService
+      .apiLocalesGet()
+      .toPromise()
+      .then((result: any) => {
+
+        if (result) {
+
+          const languages = JSON.parse(result);
+
+          if (languages) {
+            languages.forEach(el => {
+
+              const lstring = el.iso.split('-');
+              if (lstring.length > 1) {
+                this.languages.push({
+                  value: lstring[0],
+                  label: lstring[0]
+                });
+              }
+            })
+          }
+
+
+        }
+
+
+      });
+
   }
 
   onLanguageSelect({ value: language }) {

@@ -22,7 +22,7 @@ export const initialState: SettingsState = {
   pageAnimationsDisabled: false,
   elementsAnimations: true,
   hour: 0,
-  zip: ''
+  city: ''
 
 };
 
