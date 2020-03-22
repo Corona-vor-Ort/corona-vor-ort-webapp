@@ -44,7 +44,7 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
         useFactory: (createTranslateLoader),
         deps: [HttpClient]
       },
-      defaultLanguage: 'en'
+      defaultLanguage: 'de'
     }),
     // core
     CoreModule,
