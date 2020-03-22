@@ -8,7 +8,8 @@ import {
   actionSettingsChangeLanguage,
   actionSettingsChangeStickyHeader,
   actionSettingsChangeTheme,
-  actionSettingsChangeCity
+  actionSettingsChangeCity,
+  actionSettingsChangeZip
 } from './settings.actions';
 import { Action, createReducer, on } from '@ngrx/store';
 
@@ -22,7 +23,8 @@ export const initialState: SettingsState = {
   pageAnimationsDisabled: false,
   elementsAnimations: true,
   hour: 0,
-  zip: ''
+  zip: '',
+  city: ''
 
 };
 
@@ -37,6 +39,7 @@ const reducer = createReducer(
     actionSettingsChangeAnimationsElements,
     actionSettingsChangeHour,
     actionSettingsChangeCity,
+    actionSettingsChangeZip,
     (state, action) => ({ ...state, ...action })
   ),
   on(

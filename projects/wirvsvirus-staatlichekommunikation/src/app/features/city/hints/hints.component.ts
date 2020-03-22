@@ -4,7 +4,7 @@ import {ApiService} from '../../../api/services/api.service';
 import {select, Store} from '@ngrx/store';
 import {State} from '../../../core/settings/settings.model';
 import {Observable} from 'rxjs';
-import {selectSettingsCity} from '../../../core/settings/settings.selectors';
+import {selectSettingsCity, selectSettingsZip} from '../../../core/settings/settings.selectors';
 
 @Component({
   selector: 'anms-hints',
@@ -16,7 +16,7 @@ export class HintsComponent implements OnInit, OnDestroy {
 
   hints: [] = [];
 
-  currZip: string;
+  currCity$: Observable<string>;
   currZip$: Observable<string>;
 
   constructor(
@@ -30,7 +30,8 @@ export class HintsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-    this.currZip$ = this.store.pipe(select(selectSettingsCity));
+    this.currZip$ = this.store.pipe(select(selectSettingsZip));
+    this.currCity$ = this.store.pipe(select(selectSettingsCity));
 
     this.route.paramMap.subscribe(params => {
 

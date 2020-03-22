@@ -13,14 +13,24 @@
               {{'anms.form.enter-zip' | translate}}
             </span>
             <mat-card class="plz-input">
-              <input [value]="zipCode"
+              <input
+                  matInput
+                  [value]="zipCode"
                      placeholder="_____"
                      (keyup)="onZipCodeChange($event.target.value)"
+                     (focus)="zipControl"
                      [minLength]="zipMinLength"
                      [maxLength]="5"
                      (keyup.enter)="search()"
+                     [formControl]="zipControl"
+                     [errorStateMatcher]="matcher"
                      class="zip-code"/>
             </mat-card>
+          </div>
+          <div class="d-block mt-2" style="width: 160px;">
+            <mat-error *ngIf="zipControl.hasError('notfound')">
+              {{ 'anms.error.zip' | translate}}
+            </mat-error>
           </div>
           <div class="d-block mt-2">
              <button [disabled]="!checkZip()" mat-raised-button color="primary" (click)="search()"

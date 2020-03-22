@@ -16,6 +16,7 @@ export interface SettingsState {
   elementsAnimations: boolean;
   hour: number;
   zip: string;
+  city: string;
 }
 
 export interface State extends AppState {

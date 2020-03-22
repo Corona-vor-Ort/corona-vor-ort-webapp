@@ -20,8 +20,15 @@ export const selectSettingsLanguage = createSelector(
 
 export const selectSettingsCity = createSelector(
   selectSettings,
+  (state: SettingsState) => state.city
+);
+
+
+export const selectSettingsZip = createSelector(
+  selectSettings,
   (state: SettingsState) => state.zip
 );
+
 
 export const selectTheme = createSelector(
   selectSettings,
@@ -62,6 +69,11 @@ export const selectIsNightHour = createSelector(
 export const selectZip = createSelector(
   selectSettings,
   settings => settings.zip
+);
+
+export const selectCity = createSelector(
+  selectSettings,
+  settings => settings.city
 );
 
 

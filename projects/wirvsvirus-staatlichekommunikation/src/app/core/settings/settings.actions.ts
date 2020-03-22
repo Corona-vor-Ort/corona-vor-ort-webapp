@@ -35,6 +35,7 @@ export const actionSettingsChangeAnimationsElements = createAction(
   '[Settings] Change Animations Elements',
   props<{ elementsAnimations: boolean }>()
 );
+
 export const actionSettingsChangeHour = createAction(
   '[Settings] Change Hours',
   props<{ hour: number }>()
@@ -42,5 +43,11 @@ export const actionSettingsChangeHour = createAction(
 
 export const actionSettingsChangeCity = createAction(
   '[Settings] Change City',
+  props<{ city: string }>()
+);
+
+export const actionSettingsChangeZip = createAction(
+  '[Settings] Change Zip',
   props<{ zip: string }>()
 );
+

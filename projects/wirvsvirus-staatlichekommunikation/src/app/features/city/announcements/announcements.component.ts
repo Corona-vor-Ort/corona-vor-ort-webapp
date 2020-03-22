@@ -7,7 +7,7 @@ import {select, Store} from '@ngrx/store';
 import {SettingsState, State} from '../../../core/settings/settings.model';
 import {Observable} from 'rxjs';
 import {take} from 'rxjs/operators';
-import {selectSettings, selectSettingsCity} from '../../../core/settings/settings.selectors';
+import {selectSettings, selectSettingsCity, selectSettingsZip} from '../../../core/settings/settings.selectors';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -21,7 +21,7 @@ export class AnnouncementsComponent implements OnInit, OnDestroy {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
   announcements: [] = [];
 
-  currZip: string;
+  currCity$: Observable<string>;
   currZip$: Observable<string>;
 
   constructor(
@@ -34,7 +34,9 @@ export class AnnouncementsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.currZip$ = this.store.pipe(select(selectSettingsCity))
+    this.currZip$ = this.store.pipe(select(selectSettingsZip));
+    this.currCity$ = this.store.pipe(select(selectSettingsCity));
+
     this.route.paramMap.subscribe(params => {
 
       if (params.get('zipcode')) {

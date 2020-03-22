@@ -26,7 +26,8 @@ import {
   actionSettingsChangeTheme,
   actionSettingsChangeStickyHeader,
   actionSettingsChangeHour,
-  actionSettingsChangeCity
+  actionSettingsChangeCity,
+  actionSettingsChangeZip
 } from './settings.actions';
 import {
   selectEffectiveTheme,
@@ -78,7 +79,8 @@ export class SettingsEffects {
           actionSettingsChangeLanguage,
           actionSettingsChangeStickyHeader,
           actionSettingsChangeTheme,
-          actionSettingsChangeCity
+          actionSettingsChangeCity,
+          actionSettingsChangeZip
         ),
         withLatestFrom(this.store.pipe(select(selectSettingsState))),
         tap(([action, settings]) =>

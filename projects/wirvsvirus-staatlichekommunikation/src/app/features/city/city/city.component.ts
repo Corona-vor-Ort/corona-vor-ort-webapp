@@ -6,9 +6,7 @@ import {ApiService} from '../../../api/services/api.service';
 import {Location} from './location.model';
 import {Store} from '@ngrx/store';
 import {State} from '../../../core/settings/settings.model';
-import {actionSettingsChangeCity} from '../../../core/settings/settings.actions';
-import {BottomNavButtonComponent} from 'ngx-bottom-nav/lib/bottom-nav-button/bottom-nav-button.component';
-import {BottomNavItem} from 'ngx-bottom-nav';
+import {actionSettingsChangeCity, actionSettingsChangeZip} from '../../../core/settings/settings.actions';
 
 @Component({
   selector: 'anms-city',
@@ -45,13 +43,19 @@ export class CityComponent implements OnInit {
 
             const cityData = JSON.parse(result);
 
+            console.log(cityData);
+
             if (cityData[0] && cityData[0].translations[0] && cityData[0].translations[0].name) {
               this.locationData.name = cityData[0].translations[0].name;
               this.locationData.zip = params.get('zipcode');
-              this.store.dispatch(actionSettingsChangeCity({zip: this.locationData.zip }));
+
+              this.store.dispatch(actionSettingsChangeCity({city: this.locationData.name }));
+              this.store.dispatch(actionSettingsChangeZip({zip: this.locationData.zip }));
+
               this.locationDataLoaded = true;
               this.cdr.detectChanges();
-              console.log('locationDataLoaded');
+
+              console.log('locationDataLoaded', this.locationData);
             }
 
           });

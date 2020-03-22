@@ -1,10 +1,14 @@
-<div class="container">
-  <div class="display-4 my-4">Hinweise für {{currZip$ | async}}</div>
+<div class="container mt-2">
+  <h4>{{currZip$ | async}} {{currCity$ | async}}</h4>
+  <a mat-raised-button color="primary" routerLink="/">
+    <fa-icon icon="map-marker" class="pr-1"></fa-icon>
+    {{'anms.button.changeZIP' | translate}}</a>
+  <h5 class="my-4">{{'anms.currenthints' | translate}} </h5>
 
   <mat-card *ngFor="let hint of hints" class="mb-3">
     <mat-card-title>{{hint.headline}}</mat-card-title>
     <mat-card-subtitle>{{hint.sent | date}} von {{hint.meldende_stelle}}</mat-card-subtitle>
-    <mat-card-content [innerHTML]="hint.description"></mat-card-content>
+    <mat-card-content [innerHTML]="hint.instruction"></mat-card-content>
   </mat-card>
 
   <mat-card *ngIf="hints.length == 0">
