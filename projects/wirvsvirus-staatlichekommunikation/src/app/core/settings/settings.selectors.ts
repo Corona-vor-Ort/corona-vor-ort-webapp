@@ -20,7 +20,7 @@ export const selectSettingsLanguage = createSelector(
 
 export const selectSettingsCity = createSelector(
   selectSettings,
-  (state: SettingsState) => state.city
+  (state: SettingsState) => state.zip
 );
 
 export const selectTheme = createSelector(
