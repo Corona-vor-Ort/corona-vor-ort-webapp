@@ -13,4 +13,5 @@ import { GlossarComponent } from './glossar/glossar.component';
   declarations: [AboutComponent, ImpressumComponent, GlossarComponent],
   imports: [CommonModule, SharedModule, AboutRoutingModule]
 })
-export class AboutModule {}
+export class AboutModule {
+}
