@@ -1,26 +1,30 @@
 <div class="background">
-  <div class="gradient">
-    <div class="container">
-      <h1>{{ 'anms.title.long' | translate }}</h1>
-      <p>Finde aktuelle Infos aus deiner Stadt</p>
-      <anms-big-input rtl [placeholder]="'anms.form.zip' | translate"
-                      [value]="zipCode"
-                      (keyup)="onZipCodeChange($event.target.value)"
-                      (keyup.enter)="search()">
-        <anms-big-input-action fontSet="fas" fontIcon="fa-search"
-                               faIcon="search" color="accent"
-                               [matTooltip]="'anms.form.tooltip.zip' | translate"
-                               (action)="search()"
-                               matTooltipPosition="before">
-        </anms-big-input-action>
 
-      </anms-big-input>
+  <div class="container" style="height:100%">
+
+    <div class="flex-column d-flex" style="height:100%">
+      <div class="row flex-grow-1 justify-content-center">
+        <div class="display-1 text-center">{{ 'anms.title.long' | translate }}</div>
+      </div>
+      <div class="row flex-grow-1 justify-content-center">
+        <div class="">
+          <anms-big-input rtl [placeholder]="'anms.form.zip' | translate" [value]="zipCode" class="mb-1"
+            (keyup)="onZipCodeChange($event.target.value)" (keyup.enter)="search()">
+            <!-- <anms-big-input-action fontSet="fas" fontIcon="fa-search" faIcon="search" color="accent"
+            [matTooltip]="'anms.form.tooltip.zip' | translate" (action)="search()" matTooltipPosition="before">
+          </anms-big-input-action> -->
+
+          </anms-big-input>
+          <div class="d-block mt-2">
+            <button mat-raised-button color="primary" (click)="search()" style="width: 100%;"><fa-icon icon="map-marker"></fa-icon> auswählen</button></div>
+        </div>
+
+      </div>
+      <div class="row flex-grow-1 justify-content-center">
+        <div class="lead text-center"> Corona vor Ort liefert dir die wichtigsten Meldungen und Informationen speziell zu deinem
+          Standort </div>
+      </div>
     </div>
+
   </div>
-</div>
-<div class="container">
-
-</div>
-<div class="container">
-
 </div>

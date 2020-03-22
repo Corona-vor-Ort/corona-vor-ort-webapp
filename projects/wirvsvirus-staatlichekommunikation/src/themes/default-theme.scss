@@ -1,5 +1,54 @@
-$anms-primary: mat-palette($mat-indigo, 800, 300, 900);
+$theme-light-blue: (
+  50 : #e8eaf6,
+    100 : #c5cbe9,
+    200 : #9fa8da,
+    300 : #7985cb,
+    400 : #5c6bc0,
+    500 : #3f51b5,
+    600 : #394aae,
+    700 : #3140a5,
+    800 : #29379d,
+    900 : #1b278d,
+    A100 : #c6cbff,
+    A200 : #939dff,
+    A400 : #606eff,
+    A700 : #4757ff,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  )
+);
+
+$anms-primary: mat-palette($theme-light-blue);
 $anms-accent: mat-palette($mat-light-blue);
 $anms-warn: mat-palette($mat-pink, 600);
 
 $anms-theme: mat-light-theme($anms-primary, $anms-accent, $anms-warn);
+
+$mat-button-border-radius: 30px;
+
+
+@mixin rounded-buttons($theme) {
+  &.mat-button {
+    border-radius: 16px;
+  }
+}
+.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button, .mat-raised-button, .mat-fab, .mat-mini-fab {
+  @include rounded-buttons($anms-theme);
+}
+
+.text-center{
+  text-align: center;
+}

@@ -60,11 +60,11 @@
   "anms.settings.themes.sticky-header": "",
   "anms.settings.themes.title": "Thema",
   "anms.settings.title": "Einstellungen",
-  "anms.title.long": "wirvsvirus Staatliche Kommunikation",
-  "anms.title.short": "Angular Vorlage",
+  "anms.title.long": "Corona vor Ort",
+  "anms.title.short": "Corona vor Ort",
   "anms.form.zip": "PLZ",
   "anms.form.tooltip.zip": "Hier PLZ eingeben",
   "anms.menu.impressum": "Impressum",
-  "anms.menu.glossar": "Glossar",
+  "anms.menu.glossar": "Lexikon",
   "anms.menu.announcements": "Meldungen"
 }
