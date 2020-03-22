@@ -6,6 +6,9 @@ import { CoreModule } from './core/core.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app/app.component';
+
+import { SharedModule } from './shared/shared.module';
+
 import {environment} from '../environments/environment';
 import {ApiModule} from './api/api.module';
 import { ApiTestComponent } from './api-test/api-test.component';
@@ -27,6 +30,7 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
 
 
 
+
 @NgModule({
   imports: [
     // angular
@@ -42,6 +46,7 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
     }),
     // core
     CoreModule,
+    SharedModule,
 
     // app
     AppRoutingModule,
@@ -54,4 +59,5 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
     API_INTERCEPTOR_PROVIDER
   ]
 })
-export class AppModule {}
+export class AppModule {
+}

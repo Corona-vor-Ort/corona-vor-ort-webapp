@@ -8,9 +8,8 @@
 
   anms-about {
     .background {
-      color: mat-color($foreground, text);
-      background-color: mat-color($background, background);
-
+      color: mat-color($primary, default-contrast);
+      background: rgba(0,0,0,.5);
       .gradient {
         &::before {
           background: linear-gradient(

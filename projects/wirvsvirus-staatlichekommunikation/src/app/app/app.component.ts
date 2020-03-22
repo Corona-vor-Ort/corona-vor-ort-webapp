@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
 
   navigation = [
     { link: 'about', label: 'anms.menu.about' },
-    { link: 'about/glossar', label: 'anms.menu.glossar' },
+    { link: 'about/glossar', label: 'anms.menu.glossar' , icon: 'book-open'},
     // { link: 'feature-list', label: 'anms.menu.features' },
     { link: 'examples', label: 'anms.menu.examples' }
   ];
