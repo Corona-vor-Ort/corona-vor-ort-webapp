@@ -13,6 +13,7 @@
 @import './themes/light-theme';
 @import './themes/black-theme';
 @import './themes/nature-theme';
+@import './themes/contrast-theme.scss';
 
 @import 'styles-reset.scss-theme';
 @import './app/app/app.component.scss-theme';
@@ -56,4 +57,9 @@
 .nature-theme {
   @include angular-material-theme($anms-nature-theme);
   @include custom-components-theme($anms-nature-theme);
+}
+
+.contrast-theme {
+  @include angular-material-theme($anms-contrast-theme);
+  @include custom-components-theme($anms-contrast-theme);
 }

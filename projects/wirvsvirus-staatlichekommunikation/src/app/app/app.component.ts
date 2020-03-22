@@ -17,7 +17,8 @@ import {
 } from '../core/core.module';
 import {
   actionSettingsChangeAnimationsPageDisabled,
-  actionSettingsChangeLanguage
+  actionSettingsChangeLanguage,
+  actionSettingsChangeTheme
 } from '../core/settings/settings.actions';
 
 @Component({
@@ -84,5 +85,12 @@ export class AppComponent implements OnInit {
 
   onLanguageSelect({ value: language }) {
     this.store.dispatch(actionSettingsChangeLanguage({ language }));
+  }
+
+  onContrast(theme) {
+    if(theme !== 'contrast-theme')
+      this.store.dispatch(actionSettingsChangeTheme({ theme: 'CONTRAST-THEME' }));
+    else
+      this.store.dispatch(actionSettingsChangeTheme({ theme: 'DEFAULT-THEME' }));
   }
 }

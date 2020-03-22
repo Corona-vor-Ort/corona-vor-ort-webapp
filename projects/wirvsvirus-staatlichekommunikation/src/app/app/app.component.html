@@ -1,4 +1,4 @@
-<div [class]="'theme-wrapper ' + (theme$ | async)">
+<div [class]="'theme-wrapper ' + (theme$ | async )" >
 
   <!-- <mat-sidenav-container> -->
     <div class="mat-sidenav-container mat-drawer-container">
@@ -68,6 +68,11 @@
             <button mat-icon-button routerLink="settings" class="d-none d-sm-inline"
               [matTooltip]="'anms.menu.settings' | translate">
               <fa-icon icon="cog"></fa-icon>
+            </button>
+
+            <button mat-icon-button class="d-none d-sm-inline" *ngIf="theme$ | async as theme"
+              [matTooltip]="'anms.menu.contrastTheme' | translate" (click)="onContrast(theme)">
+              aA
             </button>
 
 
