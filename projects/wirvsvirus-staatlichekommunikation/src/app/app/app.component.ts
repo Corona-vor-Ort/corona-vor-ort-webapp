@@ -24,7 +24,7 @@ import {
 import {ApiService} from '../api/services/api.service';
 import {TranslateService} from '@ngx-translate/core';
 import {getSortHeaderNotContainedWithinSortError} from '@angular/material/sort/sort-errors';
-import { selectSettingsCity } from '../core/settings/settings.selectors';
+import {selectSettingsCity, selectSettingsZip} from '../core/settings/settings.selectors';
 
 @Component({
   selector: 'anms-root',
@@ -113,9 +113,9 @@ export class AppComponent implements OnInit {
     this.isAuthenticated$ = this.store.pipe(select(selectIsAuthenticated));
     this.stickyHeader$ = this.store.pipe(select(selectSettingsStickyHeader));
     this.theme$ = this.store.pipe(select(selectEffectiveTheme));
-    this.store.pipe(select(selectSettingsCity)).subscribe((s) => {
+    this.store.pipe(select(selectSettingsZip)).subscribe((s) => {
       // console.log(s);
-      this.currZip = s || '65830';
+      this.currZip = s;
       this.navigation = [
         // { link: 'about', label: 'anms.menu.about' },
         { link: 'about/glossar', label: 'anms.menu.glossar' , icon: 'book-open'},

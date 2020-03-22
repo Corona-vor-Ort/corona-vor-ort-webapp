@@ -48,6 +48,8 @@ export class HintsComponent implements OnInit, OnDestroy {
 
             const results = JSON.parse(result);
 
+            this.hints = results;
+            
             this.cdr.detectChanges();
 
           });
