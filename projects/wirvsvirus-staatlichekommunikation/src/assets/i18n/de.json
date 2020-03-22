@@ -79,5 +79,7 @@
 
   "anms.nodata.title": "Keine Daten vorhanden",
   "anms.nodata.sutitle": "",
-  "anms.nodata.message": "Aktuell keine Daten vorhanden"
+  "anms.nodata.message": "Aktuell keine Daten vorhanden",
+  "anms.button.changeZIP": "PLZ ändern",
+  "anms.currentannouncements": "Aktuelle Meldungen"
 }

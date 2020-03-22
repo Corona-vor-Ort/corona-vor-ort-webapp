@@ -1,5 +1,9 @@
-<div class="container">
-  <div class="display-4 my-4">Meldungen für {{currZip$ | async}}</div>
+<div class="container mt-2">
+  <h4>{{currZip$ | async}}</h4>
+  <a mat-raised-button color="primary" routerLink="/">
+    <fa-icon icon="map-marker" class="pr-1"></fa-icon>
+    {{'anms.button.changeZIP' | translate}}</a>
+  <h5 class="my-4">{{'anms.currentannouncements' | translate}} </h5>
 
   <mat-card *ngFor="let announcement of announcements" class="mb-3">
     <mat-card-title>{{announcement.headline}}</mat-card-title>
