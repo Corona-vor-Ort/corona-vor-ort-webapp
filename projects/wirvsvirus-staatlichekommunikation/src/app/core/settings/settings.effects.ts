@@ -25,7 +25,8 @@ import {
   actionSettingsChangeLanguage,
   actionSettingsChangeTheme,
   actionSettingsChangeStickyHeader,
-  actionSettingsChangeHour
+  actionSettingsChangeHour,
+  actionSettingsChangeCity
 } from './settings.actions';
 import {
   selectEffectiveTheme,

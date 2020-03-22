@@ -39,3 +39,8 @@ export const actionSettingsChangeHour = createAction(
   '[Settings] Change Hours',
   props<{ hour: number }>()
 );
+
+export const actionSettingsChangeCity = createAction(
+  '[Settings] Change City',
+  props<{ city: string }>()
+);

@@ -22,12 +22,14 @@
               <input [value]="zipCode"
                      placeholder="_____"
                      (keyup)="onZipCodeChange($event.target.value)"
+                     [minLength]="zipMinLength"
+                     [maxLength]="5"
                      (keyup.enter)="search()"
                      class="zip-code"/>
             </mat-card>
           </div>
           <div class="d-block mt-2">
-            <button mat-raised-button color="primary" (click)="search()" style="width: 160px;"><fa-icon icon="search" class="mr-2"></fa-icon> Suchen</button></div>
+            <button mat-raised-button color="primary" [disabled]="!checkZip()" (click)="search()" style="width: 160px;"><fa-icon icon="search" class="mr-2"></fa-icon> Suchen</button></div>
         </div>
 
       </div>

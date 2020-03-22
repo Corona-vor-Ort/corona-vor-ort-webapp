@@ -1,7 +1,12 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
 
-import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../core/core.module';
+import {AppState, ROUTE_ANIMATIONS_ELEMENTS, selectIsAuthenticated, selectZip} from '../../../core/core.module';
 import { Announcement } from './announcement.model';
+import {ApiService} from '../../../api/services/api.service';
+import {select, Store} from '@ngrx/store';
+import {State} from '../../../core/settings/settings.model';
+import {Observable} from 'rxjs';
+import {take} from 'rxjs/operators';
 
 @Component({
   selector: 'anms-announcements',
@@ -9,20 +14,28 @@ import { Announcement } from './announcement.model';
   styleUrls: ['./announcements.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AnnouncementsComponent implements OnInit {
-  routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
-  announcements: Announcement[];
+export class AnnouncementsComponent implements OnInit, OnDestroy {
 
-  constructor() {
-    this.announcements = [
-      {
-        id: '123',
-        title: 'Bitte nicht mehr rausgehen',
-        date: new Date('2020-03-20'),
-        message: 'Ab 21.03.2020 00:00 Uhr bitte nicht mehr das Haus verlassen.'
-      }
-    ];
+  routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
+  announcements: Announcement[] = [];
+
+  currZip$: Observable<string>;
+
+  constructor(
+    private apiService: ApiService,
+    private store: Store<AppState>
+  ) {
+
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.currZip$ = this.store.pipe(select(selectZip));
+
+
+  }
+
+  ngOnDestroy(): void {
+
+  }
+
 }

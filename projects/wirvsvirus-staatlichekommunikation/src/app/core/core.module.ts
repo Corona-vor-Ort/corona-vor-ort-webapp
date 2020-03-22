@@ -56,7 +56,8 @@ import { SettingsEffects } from './settings/settings.effects';
 import {
   selectSettingsLanguage,
   selectEffectiveTheme,
-  selectSettingsStickyHeader
+  selectSettingsStickyHeader,
+  selectZip
 } from './settings/settings.selectors';
 import { MatButtonModule } from '@angular/material/button';
 import {
@@ -91,7 +92,8 @@ export {
   NotificationService,
   selectEffectiveTheme,
   selectSettingsLanguage,
-  selectSettingsStickyHeader
+  selectSettingsStickyHeader,
+  selectZip
 };
 
 export function HttpLoaderFactory(http: HttpClient) {

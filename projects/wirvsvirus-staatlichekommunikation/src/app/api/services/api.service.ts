@@ -447,6 +447,55 @@ export class ApiService extends BaseService {
   }
 
   /**
+   * Path part for operation apiCitiesByZipZipGet
+   */
+  static readonly ApiCitiesByZipZipGetPath = '/api/cities/by_zip/{zip}';
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `apiCitiesByZipZipGet()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  apiCitiesByZipZipGet$Response(params: {
+    zip: any;
+
+  }): Observable<StrictHttpResponse<void>> {
+
+    const rb = new RequestBuilder(this.rootUrl, ApiService.ApiCitiesByZipZipGetPath, 'get');
+    if (params) {
+
+      rb.path('zip', params.zip);
+
+    }
+    return this.http.request(rb.build({
+      responseType: 'text',
+      accept: '*/*'
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return (r as HttpResponse<any>).clone({ body: undefined }) as StrictHttpResponse<void>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `apiCitiesByZipZipGet$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  apiCitiesByZipZipGet(params: {
+    zip: any;
+
+  }): Observable<void> {
+
+    return this.apiCitiesByZipZipGet$Response(params).pipe(
+      map((r: StrictHttpResponse<void>) => r.body as void)
+    );
+  }
+
+  /**
    * Path part for operation apiCitiesIdGet
    */
   static readonly ApiCitiesIdGetPath = '/api/cities/{id}';
@@ -491,6 +540,55 @@ export class ApiService extends BaseService {
   }): Observable<void> {
 
     return this.apiCitiesIdGet$Response(params).pipe(
+      map((r: StrictHttpResponse<void>) => r.body as void)
+    );
+  }
+
+  /**
+   * Path part for operation apiMessagesZipGet
+   */
+  static readonly ApiMessagesZipGetPath = '/api/messages/{zip}';
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `apiMessagesZipGet()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  apiMessagesZipGet$Response(params: {
+    zip: any;
+
+  }): Observable<StrictHttpResponse<void>> {
+
+    const rb = new RequestBuilder(this.rootUrl, ApiService.ApiMessagesZipGetPath, 'get');
+    if (params) {
+
+      rb.path('zip', params.zip);
+
+    }
+    return this.http.request(rb.build({
+      responseType: 'text',
+      accept: '*/*'
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return (r as HttpResponse<any>).clone({ body: undefined }) as StrictHttpResponse<void>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `apiMessagesZipGet$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  apiMessagesZipGet(params: {
+    zip: any;
+
+  }): Observable<void> {
+
+    return this.apiMessagesZipGet$Response(params).pipe(
       map((r: StrictHttpResponse<void>) => r.body as void)
     );
   }

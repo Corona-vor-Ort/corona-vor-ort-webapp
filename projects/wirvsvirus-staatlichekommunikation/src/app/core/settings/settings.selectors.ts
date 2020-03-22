@@ -54,6 +54,12 @@ export const selectIsNightHour = createSelector(
   (autoNightMode, hour) => autoNightMode && (hour >= 21 || hour <= 7)
 );
 
+export const selectZip = createSelector(
+  selectSettings,
+  settings => settings.zip
+);
+
+
 export const selectEffectiveTheme = createSelector(
   selectTheme,
   selectNightTheme,

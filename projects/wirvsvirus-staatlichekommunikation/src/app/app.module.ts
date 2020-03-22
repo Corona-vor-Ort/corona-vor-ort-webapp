@@ -12,10 +12,11 @@ import { SharedModule } from './shared/shared.module';
 import {environment} from '../environments/environment';
 import {ApiModule} from './api/api.module';
 import { ApiTestComponent } from './api-test/api-test.component';
-import {ApiInterceptor} from './api/api.interception';
+
 import {HTTP_INTERCEPTORS, HttpClient} from '@angular/common/http';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {ApiInterceptor} from './core/api.interception';
 
 
 export function createTranslateLoader(http: HttpClient) {
