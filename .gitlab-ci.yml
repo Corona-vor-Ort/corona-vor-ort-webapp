@@ -1,0 +1,23 @@
+stages:
+  - build
+
+Github Mirror:
+  image: ubuntu
+  only:
+    - master
+  stage: build
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan github.com >> ~/.ssh/known_hosts
+    - ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - git remote add gitlab git@gitlab.com:$CI_PROJECT_PATH.git
+    - git remote add github git@github.com:Corona-vor-Ort/corona-vor-ort-webapp.git
+    - git fetch gitlab
+    - git checkout -b master gitlab/master
+    - git push --force github master
