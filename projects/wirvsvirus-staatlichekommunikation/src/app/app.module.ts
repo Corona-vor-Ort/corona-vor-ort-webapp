@@ -28,4 +28,5 @@ import { ApiTestComponent } from './api-test/api-test.component';
   declarations: [AppComponent, ApiTestComponent],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+}
