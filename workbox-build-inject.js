@@ -6,7 +6,7 @@ const buildSW = () => {
   // This will return a Promise
   return workboxBuild.injectManifest({
     swSrc: 'projects/wirvsvirus-staatlichekommunikation/src/sw.js',
-    swDest: 'dist/wirvsvirus-staatlichekommunikation/sw.js',
+    swDest: 'dist/sw.js',
     globDirectory: 'dist/',
   globPatterns: [
     '**/*.{txt,png,jpg,gif,svg,ico,html,js,json,css,otf,ttf,woff,woff2}'
