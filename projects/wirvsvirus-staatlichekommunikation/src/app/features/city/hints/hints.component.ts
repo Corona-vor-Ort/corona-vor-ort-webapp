@@ -1,9 +1,10 @@
 import {Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, OnDestroy} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ApiService} from '../../../api/services/api.service';
-import {Store} from '@ngrx/store';
+import {select, Store} from '@ngrx/store';
 import {State} from '../../../core/settings/settings.model';
 import {Observable} from 'rxjs';
+import {selectSettingsCity} from '../../../core/settings/settings.selectors';
 
 @Component({
   selector: 'anms-hints',
@@ -28,6 +29,9 @@ export class HintsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+
+    this.currZip$ = this.store.pipe(select(selectSettingsCity));
+
     this.route.paramMap.subscribe(params => {
 
       if (params.get('zipcode')) {
@@ -41,7 +45,8 @@ export class HintsComponent implements OnInit, OnDestroy {
           .toPromise()
           .then((result: any) => {
 
-            this.hints = JSON.parse(result);
+            const results = JSON.parse(result);
+
             this.cdr.detectChanges();
 
           });
