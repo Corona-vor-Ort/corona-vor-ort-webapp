@@ -1,0 +1,6 @@
+{
+  "$schema": "node_modules/ng-openapi-gen/ng-openapi-gen-schema.json",
+  "input": "https://api.corona-vor-ort.de/api/doc.json",
+  "output": "projects/wirvsvirus-staatlichekommunikation/src/app/api/",
+  "ignoreUnusedModels": false
+}

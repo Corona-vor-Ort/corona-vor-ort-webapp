@@ -3,12 +3,55 @@
 h1 {
   text-align: center;
   font-size: 3em;
-  text-transform: uppercase;
 }
 
 h2 {
   font-size: 1.5em;
   text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.zip-code {
+  letter-spacing: 15px;
+}
+
+.zip-digit {
+  border-bottom: 1px solid black;
+}
+
+.plz-input-instruction {
+  font-size: 0.8em;
+}
+
+.plz-input {
+  width: 10em;
+  transition: all 0.5s;
+  display: flex;
+  padding: 10px 10px 10px 20px;
+
+  input {
+    flex-grow: 1;
+    border: 0;
+    font-size: 20px;
+    min-width: 100px;
+  }
+}
+
+// hide number spinner
+/* Chrome, Safari, Edge, Opera */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
 }
 
 .background {
@@ -65,7 +108,12 @@ h2 {
     left: 0;
     bottom: 0;
     right: 0;
+
     background: url('../../../../assets/start.jpg') no-repeat center top;
+
+    background: url('../../../../assets/pexels-photo-3771792_homescreen.jpeg')
+      no-repeat center top;
+
     background-size: cover;
     opacity: 0.7;
     content: '';
@@ -97,6 +145,7 @@ h2 {
     .actions {
       margin: 50px 0;
     }
+
     .get-started {
       width: auto;
     }

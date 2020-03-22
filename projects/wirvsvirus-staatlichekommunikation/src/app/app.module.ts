@@ -6,7 +6,15 @@ import { CoreModule } from './core/core.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app/app.component';
+
 import { SharedModule } from './shared/shared.module';
+
+import {environment} from '../environments/environment';
+import {ApiModule} from './api/api.module';
+import { ApiTestComponent } from './api-test/api-test.component';
+
+
+
 
 @NgModule({
   imports: [
@@ -19,9 +27,11 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
 
     // app
-    AppRoutingModule
+    AppRoutingModule,
+    ApiModule.forRoot({ rootUrl: environment.apiURI }),
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, ApiTestComponent],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+}

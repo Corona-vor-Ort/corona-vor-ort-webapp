@@ -6,6 +6,7 @@ export const environment = {
   production: true,
   test: false,
   i18nPrefix: '/wirvsvirus-staatlichekommunikation',
+  apiURI: 'https://api.corona-vor-ort.de',
   versions: {
     app: packageJson.version,
     angular: packageJson.dependencies['@angular/core'],
