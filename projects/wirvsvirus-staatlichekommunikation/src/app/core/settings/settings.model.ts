@@ -15,7 +15,7 @@ export interface SettingsState {
   pageAnimationsDisabled: boolean;
   elementsAnimations: boolean;
   hour: number;
-  zip: string;
+  city: string;
 }
 
 export interface State extends AppState {

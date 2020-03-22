@@ -34,7 +34,7 @@
 
 
           <span class="d-flex justify-content-between menu">
-            <button mat-button class="nav-button" *ngFor="let item of navigation" [routerLink]="[item.link]"
+            <button mat-button class="nav-button" *ngFor="let item of navigation" [routerLink]="item.link"
               [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
 
               <fa-icon icon="{{item.icon}}" *ngIf="item.icon" class="d-block d-md-inline">

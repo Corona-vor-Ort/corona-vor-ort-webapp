@@ -3,6 +3,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../core/core.module';
 import { Router } from '@angular/router';
 import {ApiService} from '../../../api/services/api.service';
+import { Store } from '@ngrx/store';
+import { actionSettingsChangeCity } from '../../../core/settings/settings.actions';
 
 @Component({
   selector: 'anms-about',
@@ -19,7 +21,8 @@ export class AboutComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private store: Store
   ) {}
 
   ngOnInit() {}
@@ -27,6 +30,7 @@ export class AboutComponent implements OnInit {
   search() {
     if (this.checkZip()) {
       this.router.navigate(['/city', this.zipCode]);
+      this.store.dispatch(actionSettingsChangeCity({city: this.zipCode }));
     }
 
   }

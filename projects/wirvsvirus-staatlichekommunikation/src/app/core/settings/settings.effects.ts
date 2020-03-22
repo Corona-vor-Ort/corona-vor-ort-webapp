@@ -77,7 +77,8 @@ export class SettingsEffects {
           actionSettingsChangeAutoNightMode,
           actionSettingsChangeLanguage,
           actionSettingsChangeStickyHeader,
-          actionSettingsChangeTheme
+          actionSettingsChangeTheme,
+          actionSettingsChangeCity
         ),
         withLatestFrom(this.store.pipe(select(selectSettingsState))),
         tap(([action, settings]) =>

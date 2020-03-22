@@ -37,7 +37,7 @@ export class AnnouncementsComponent implements OnInit, OnDestroy {
     this.route.paramMap.subscribe(params => {
 
       if (params.get('zipcode')) {
-        console.log(params.get('zipcode'));
+       // console.log(params.get('zipcode'));
 
         // get City data
         this.apiService

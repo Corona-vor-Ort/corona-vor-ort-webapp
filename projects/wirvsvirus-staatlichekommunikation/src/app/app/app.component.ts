@@ -13,7 +13,8 @@ import {
   selectIsAuthenticated,
   selectSettingsStickyHeader,
   selectSettingsLanguage,
-  selectEffectiveTheme
+  selectEffectiveTheme,
+  selectRouterState
 } from '../core/core.module';
 import {
   actionSettingsChangeAnimationsPageDisabled,
@@ -23,6 +24,7 @@ import {
 import {ApiService} from '../api/services/api.service';
 import {TranslateService} from '@ngx-translate/core';
 import {getSortHeaderNotContainedWithinSortError} from '@angular/material/sort/sort-errors';
+import { selectSettingsCity } from '../core/settings/settings.selectors';
 
 @Component({
   selector: 'anms-root',
@@ -35,28 +37,20 @@ export class AppComponent implements OnInit {
   envName = env.envName;
   version = env.versions.app;
   year = new Date().getFullYear();
-
+  currZip: string;
   // languages = ['en', 'de', 'sk', 'fr', 'es', 'pt-br', 'zh-cn', 'he'];
   languages = [];
 
   logo = require('../../assets/coronavorort-logo-1-blau.png');
 
-  navigation = [
-    { link: 'about', label: 'anms.menu.about' },
-    { link: 'about/glossar', label: 'anms.menu.glossar' , icon: 'book-open'},
-    // { link: 'feature-list', label: 'anms.menu.features' },
-   //  { link: 'examples', label: 'anms.menu.examples' }
-  ];
 
-  navigationSideMenu = [
-    ...this.navigation,
-    { link: 'settings', label: 'anms.menu.settings' }
-  ];
 
   isAuthenticated$: Observable<boolean>;
   stickyHeader$: Observable<boolean>;
   language$: Observable<string>;
   theme$: Observable<string>;
+  navigation: any;
+
 
   constructor(
     private store: Store,
@@ -119,6 +113,24 @@ export class AppComponent implements OnInit {
     this.isAuthenticated$ = this.store.pipe(select(selectIsAuthenticated));
     this.stickyHeader$ = this.store.pipe(select(selectSettingsStickyHeader));
     this.theme$ = this.store.pipe(select(selectEffectiveTheme));
+    this.store.pipe(select(selectSettingsCity)).subscribe((s) => {
+      // console.log(s);
+      this.currZip = s || '65830';
+      this.navigation = [
+        // { link: 'about', label: 'anms.menu.about' },
+        { link: 'about/glossar', label: 'anms.menu.glossar' , icon: 'book-open'},
+        { link: '/city/' + this.currZip + '/announcements', label: 'anms.menu.announcements' , icon: 'comment-alt'},
+        { link: '/city/' + this.currZip + '/hints', label: 'anms.menu.hints' , icon: 'info-circle'},
+        // { link: 'about/glossar', label: 'anms.menu.glossar' , icon: 'book-open'},
+        { link: 'weiteres', label: 'anms.menu.extra' , icon: 'ellipsis-h'},
+
+      ];
+
+
+    }
+
+    )
+
   }
 
   onLoginClick() {

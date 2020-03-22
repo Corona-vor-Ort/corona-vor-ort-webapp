@@ -40,9 +40,15 @@ $anms-theme: mat-light-theme($anms-primary, $anms-accent, $anms-warn);
 $mat-button-border-radius: 30px;
 
 @mixin rounded-buttons($theme) {
+  $primary: map-get($theme, primary);
   &.mat-button {
     border-radius: 16px;
   }
+  &.mat-raised-button[disabled] {
+
+    background-color: mat-color($primary,100) !important
+  }
+
 }
 .mat-button,
 .mat-icon-button,
