@@ -63,14 +63,14 @@
                   "name": "styles",
                   "baseline": "280kb",
                   "maximumWarning": "50kb",
-                  "maximumError": "100kb"
+                  "maximumError": "200kb"
                 },
                 {
                   "type": "bundle",
                   "name": "main",
                   "baseline": "1024kb",
                   "maximumWarning": "100kb",
-                  "maximumError": "200kb"
+                  "maximumError": "300kb"
                 },
                 {
                   "type": "anyComponentStyle",
