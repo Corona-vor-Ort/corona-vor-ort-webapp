@@ -66,7 +66,7 @@
   "anms.menu.contrastTheme": "Große Schrift mit viel Kontrast",
 
 
-  "anms.start.description": "Corona vor Ort liefert Dir die wichtigsten Meldungen und Informationenen speziell zu Deinem Standort.",
+  "anms.start.description": "Corona vor Ort liefert Dir die wichtigsten Meldungen und Informationenen speziell zu Deinem Standort.<br/><small>Achtung: Es handelt sich um einen Prototypen. Angaben ohne Gewähr, informieren Sie sich auf: <a href='https://warnung.bund.de/'>https://warnung.bund.de/</a></small>",
 
   "anms.form.zip": "PLZ",
   "anms.error.zip": "Unbekannte PLZ",

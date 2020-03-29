@@ -17,6 +17,7 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {ApiInterceptor} from './core/api.interception';
 import {BottomNavModule} from 'ngx-bottom-nav';
+import { MoreComponent } from './more/more.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -54,7 +55,7 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
     AppRoutingModule,
     ApiModule.forRoot({ rootUrl: environment.apiURI }),
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, MoreComponent],
   bootstrap: [AppComponent],
   providers: [
     ApiInterceptor,

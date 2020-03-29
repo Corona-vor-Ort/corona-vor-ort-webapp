@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TabnavComponent } from './tabnav.component';
+import { MoreComponent } from './more.component';
 
-describe('TabnavComponent', () => {
-  let component: TabnavComponent;
-  let fixture: ComponentFixture<TabnavComponent>;
+describe('MoreComponent', () => {
+  let component: MoreComponent;
+  let fixture: ComponentFixture<MoreComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TabnavComponent ]
+      declarations: [ MoreComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TabnavComponent);
+    fixture = TestBed.createComponent(MoreComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

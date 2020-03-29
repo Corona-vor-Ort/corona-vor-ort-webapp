@@ -11,6 +11,10 @@ h2 {
   text-transform: uppercase;
 }
 
+router-outlet {
+  overflow-y: auto;
+}
+
 .background {
   padding: 80px 0 0 0;
   position: relative;

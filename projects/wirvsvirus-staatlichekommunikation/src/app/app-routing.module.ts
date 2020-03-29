@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import {AboutComponent} from './features/about/about/about.component';
+import {MoreComponent} from './more/more.component';
 
 const routes: Routes = [
   {
@@ -30,9 +32,9 @@ const routes: Routes = [
       import('./features/settings/settings.module').then(m => m.SettingsModule)
   },
   {
-    path: 'examples',
-    loadChildren: () =>
-      import('./features/examples/examples.module').then(m => m.ExamplesModule)
+    path: 'weiteres',
+    component: MoreComponent,
+    data: { title: 'anms.menu.extra' }
   },
   {
     path: '**',
