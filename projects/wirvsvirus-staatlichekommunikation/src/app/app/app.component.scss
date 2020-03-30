@@ -1,8 +1,12 @@
 @import '../../styles-variables';
 
 .theme-wrapper {
-  height: 100%;
-  width: 100%;
+  display: flex;
+  min-height: 100vh;
+}
+
+.mat-drawer-container {
+  flex: 1;
 }
 
 .mat-sidenav-container {
@@ -80,11 +84,9 @@
   }
 
   .wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 
@@ -172,10 +174,10 @@
     }
   }
   @media (min-width: map-get($grid-breakpoints, md)) {
-  .branding img {
-    filter: brightness(0) invert(1);
+    .branding img {
+      filter: brightness(0) invert(1);
+    }
   }
-}
   @media (max-width: map-get($grid-breakpoints, md)) {
     .toolbar {
       bottom: 0;
